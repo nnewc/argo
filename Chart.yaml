@@ -1,0 +1,4 @@
+dependencies:
+  - name: "neuvector"
+    version: "102.0.6+up2.6.6"
+    repository: "https://charts.rancher.io/neuvector"
