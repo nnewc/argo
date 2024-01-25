@@ -1,4 +1,4 @@
-nv:
+neuvector:
   controller:
     pvc:
       enabled: false
