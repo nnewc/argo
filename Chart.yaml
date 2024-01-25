@@ -9,4 +9,4 @@ appVersion: "102.0.6+up2.6.6"
 dependencies:
   - name: "neuvector"
     version: "102.0.6+up2.6.6"
-    repository: "https://charts.rancher.io/neuvector"
+    repository: "https://charts.rancher.io"
