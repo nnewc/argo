@@ -1,0 +1,25 @@
+controller:
+  pvc:
+    enabled: false
+  ranchersso:
+    enabled: true
+  runAsUser: 1000
+global:
+  cattle:
+    url: https://10.7.2.222.nip.io
+k3s:
+  enabled: true
+  runtimePath: /run/k3s/containerd/containerd.sock
+manager:
+  svc:
+    type: ClusterIP
+  runAsUser: 1000
+enforcer:
+  runAsUser: 1000
+cve:
+  scanner:
+    runAsUser: 1000
+  updater:
+    runAsUser: 1000
+rbac: true
+leastPrivilege: true
