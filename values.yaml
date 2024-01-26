@@ -1,3 +1,8 @@
+global:
+  cattle:
+    url: https://10.7.2.98.nip.io/k8s/clusters/c-m-8ppsndgb/
+    psp:
+      enabled: false
 neuvector:
   controller:
     pvc:
@@ -5,9 +10,17 @@ neuvector:
     ranchersso:
       enabled: true
     runAsUser: 1000
-  global:
-    cattle:
-      url: https://rancher.10.7.2.222.nip.io
+    apisvc:
+      type: ClusterIP
+    ingress:
+      enabled: true
+      host: neuvector-controller.10.7.2.115.nip.io
+    federation:
+      managedsvc:
+        type: ClusterIP
+        ingress:
+          enabled: true
+          host: neuvector-fed-managed.10.7.2.115.nip.io
   k3s:
     enabled: true
     runtimePath: /run/k3s/containerd/containerd.sock
@@ -16,25 +29,13 @@ neuvector:
       type: ClusterIP
     ingress:
       enabled: true
-      host: neuvector-manager.10.7.2.222.nip.io
-    runAsUser: 1000
-  controller:
-    apisvc:
-      type: ClusterIP
-    ingress:
-      enabled: true
-      host: neuvector-controller.10.7.2.222.nip.io
-    federation:
-      managedsvc:
-        type: ClusterIP
-        ingress:
-          enabled: true
-          host: neuvector-fed-managed.10.7.2.222.nip.io
+      host: neuvector-manager.10.7.2.115.nip.io
+    runAsUser: 5400
   enforcer:
     runAsUser: 1000
   cve:
     scanner:
-      runAsUser: 1000
+      runAsUser: 5400
     updater:
       runAsUser: 1000
   rbac: true
